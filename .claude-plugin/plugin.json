@@ -1,0 +1,9 @@
+{
+  "name": "claude-code-workshop",
+  "version": "1.0.0",
+  "description": "Interactive workshop that teaches Claude Code through hands-on lessons",
+  "author": { "name": "claude-code-workshop contributors" },
+  "license": "MIT",
+  "keywords": ["claude-code", "workshop", "tutorial", "learning"],
+  "skills": "./skills/"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "claude-code-workshop",
+  "version": "1.0.0",
+  "description": "Interactive workshop plugin for learning Claude Code through hands-on lessons",
+  "license": "MIT",
+  "keywords": ["claude-code", "plugin", "workshop", "tutorial", "learning"],
+  "files": ["skills", ".claude-plugin", "lib", "README.md", "LICENSE"],
+  "engines": { "node": ">=20.0.0" }
+}
