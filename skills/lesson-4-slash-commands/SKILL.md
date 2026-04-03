@@ -1,124 +1,124 @@
 ---
 name: lesson-4-slash-commands
-description: "Lesson 4: Slash Commands & Shortcuts — master Claude Code's built-in commands"
+description: "레슨 4: 슬래시 명령어 & 단축키 — Claude Code의 내장 명령어 마스터하기"
 ---
 
-# Lesson 4: Slash Commands & Shortcuts
+# 레슨 4: 슬래시 명령어 & 단축키
 
 <Purpose>
-Teach the student how to use Claude Code's built-in slash commands and keyboard shortcuts. Present the material conversationally, explain the difference between /clear and /compact clearly, and guide the student through an interactive quiz and a hands-on challenge. Be encouraging throughout.
+학생에게 Claude Code의 내장 슬래시 명령어와 키보드 단축키 사용법을 가르칩니다. 대화체로 내용을 전달하고, /clear와 /compact의 차이를 명확하게 설명하며, 인터랙티브 퀴즈와 실습 챌린지를 통해 학생을 안내합니다. 내내 격려하는 태도를 유지하세요.
 </Purpose>
 
-## Introduction
+## 소개
 
-Claude Code has a set of built-in slash commands that give you quick access to common actions. You can see all available commands by typing `/` in the chat — a menu will appear showing everything that's available. These commands save you from having to describe common operations in natural language.
+Claude Code에는 자주 사용하는 작업에 빠르게 접근할 수 있는 내장 슬래시 명령어 세트가 있습니다. 채팅창에서 `/`를 입력하면 사용 가능한 모든 명령어를 보여주는 메뉴가 나타납니다. 이 명령어들 덕분에 일반적인 작업을 자연어로 일일이 설명할 필요가 없습니다.
 
-A few commands you'll use constantly: `/help` shows documentation about Claude Code features and available commands — it's your first stop when you're not sure what's possible. `/clear` resets your conversation entirely, giving you a fresh start with no memory of previous messages. `/compact` does something subtler — it summarizes your conversation to free up context window space while keeping the key information. Use `/compact` when a long session is getting slow; use `/clear` when you want a completely fresh start.
+자주 사용하게 될 명령어 몇 가지를 소개합니다: `/help`는 Claude Code의 기능과 사용 가능한 명령어에 대한 문서를 보여줍니다 — 무엇이 가능한지 모를 때 가장 먼저 찾게 될 명령어입니다. `/clear`는 대화를 완전히 초기화하여 이전 메시지에 대한 기억 없이 새로 시작할 수 있게 해줍니다. `/compact`는 더 미묘한 역할을 합니다 — 핵심 정보는 유지하면서 대화를 요약하여 컨텍스트 윈도우 공간을 확보합니다. 긴 세션이 느려질 때는 `/compact`를 사용하고, 완전히 새로 시작하고 싶을 때는 `/clear`를 사용하세요.
 
-You can also switch models mid-conversation with `/model`, which is handy when you want to use a faster model for quick tasks or a more capable one for complex work.
+대화 도중 `/model`로 모델을 전환할 수도 있습니다. 빠른 작업에는 더 빠른 모델을, 복잡한 작업에는 더 강력한 모델을 사용하고 싶을 때 유용합니다.
 
-Beyond slash commands, there are keyboard shortcuts that speed up your workflow: **Escape** cancels the current operation, and **Ctrl+C** interrupts a running command. These are the ones you'll reach for most often when something is taking too long or going in the wrong direction.
+슬래시 명령어 외에도 워크플로우를 빠르게 해주는 키보드 단축키가 있습니다: **Escape**는 현재 작업을 취소하고, **Ctrl+C**는 실행 중인 명령을 중단합니다. 작업이 너무 오래 걸리거나 잘못된 방향으로 가고 있을 때 가장 많이 사용하게 될 단축키들입니다.
 
-## Key Concepts
+## 핵심 개념
 
-- **Slash command menu** — type `/` in the chat to see all available commands
-- **/help** — shows documentation about Claude Code features and available commands
-- **/clear vs /compact** — `/clear` resets the entire conversation (fresh start); `/compact` summarizes it (keeps context but frees space)
-- **/model** — switch between Claude models mid-conversation
-- **Keyboard shortcuts** — Escape to cancel, Ctrl+C to interrupt a running command
+- **슬래시 명령어 메뉴** — 채팅창에서 `/`를 입력하면 사용 가능한 모든 명령어를 볼 수 있습니다
+- **/help** — Claude Code의 기능과 사용 가능한 명령어에 대한 문서를 보여줍니다
+- **/clear vs /compact** — `/clear`는 전체 대화를 초기화(새로 시작)하고, `/compact`는 대화를 요약(컨텍스트를 유지하면서 공간 확보)합니다
+- **/model** — 대화 도중 Claude 모델을 전환합니다
+- **키보드 단축키** — Escape로 취소, Ctrl+C로 실행 중인 명령 중단
 
-## Interactive Quiz
+## 인터랙티브 퀴즈
 
-IMPORTANT: For each question below, present ONLY the question and the four options to the student using AskUserQuestion. Do NOT reveal, hint at, or confirm the correct answer until the student has explicitly made their choice. Wait for the student to respond before continuing.
+중요: 아래 각 질문에 대해 AskUserQuestion을 사용하여 학생에게 질문과 네 가지 선택지만 제시하세요. 학생이 명시적으로 선택하기 전까지 정답을 밝히거나 암시하거나 확인하지 마세요. 학생이 응답할 때까지 기다린 후 계속 진행하세요.
 
-### Question 1: What does the /help command do?
+### 질문 1: /help 명령어는 무엇을 하나요?
 
-Present these options to the student:
-A) Fixes your code
-B) Shows documentation about Claude Code features and available commands
-C) Calls customer support
-D) Resets your session
+학생에게 다음 선택지를 제시하세요:
+A) 코드를 수정해줍니다
+B) Claude Code의 기능과 사용 가능한 명령어에 대한 문서를 보여줍니다
+C) 고객 지원을 연결해줍니다
+D) 세션을 초기화합니다
 
---- AFTER STUDENT RESPONDS ---
+--- 학생이 응답한 후 ---
 
-The correct answer is B.
+정답은 B입니다.
 
-If correct: Exactly right! `/help` is your go-to reference for what Claude Code can do. It shows available commands, features, and how to use them — bookmark it mentally for whenever you're not sure what's possible.
+정답인 경우: 정확히 맞췄습니다! `/help`는 Claude Code로 무엇이 가능한지 알아볼 때 가장 먼저 찾는 참고 자료입니다. 사용 가능한 명령어, 기능, 사용 방법을 보여줍니다 — 무엇이 가능한지 모를 때를 대비해 머릿속에 저장해 두세요.
 
-If incorrect: The correct answer is B. `/help` displays built-in documentation about Claude Code's features and available commands. It doesn't fix code, contact support, or reset anything — it's simply your in-app reference guide.
+오답인 경우: 정답은 B입니다. `/help`는 Claude Code의 기능과 사용 가능한 명령어에 대한 내장 문서를 표시합니다. 코드를 수정하거나, 지원에 연결하거나, 무언가를 초기화하지 않습니다 — 단순히 앱 내 참고 가이드입니다.
 
-### Question 2: What does /compact do?
+### 질문 2: /compact는 무엇을 하나요?
 
-Present these options to the student:
-A) Deletes all your files
-B) Compresses your conversation to save context window space while keeping key information
-C) Makes Claude's responses shorter
-D) Clears the screen
+학생에게 다음 선택지를 제시하세요:
+A) 모든 파일을 삭제합니다
+B) 핵심 정보를 유지하면서 컨텍스트 윈도우 공간을 절약하기 위해 대화를 압축합니다
+C) Claude의 응답을 더 짧게 만듭니다
+D) 화면을 지웁니다
 
---- AFTER STUDENT RESPONDS ---
+--- 학생이 응답한 후 ---
 
-The correct answer is B.
+정답은 B입니다.
 
-If correct: Correct! `/compact` is for long sessions where you want to keep working without starting over. It summarizes the conversation history to reclaim context window space, so Claude stays fast and responsive without losing the thread of what you've been doing.
+정답인 경우: 맞습니다! `/compact`는 처음부터 다시 시작하지 않고 계속 작업하고 싶은 긴 세션에 유용합니다. 대화 기록을 요약하여 컨텍스트 윈도우 공간을 확보하므로, 진행 중인 맥락을 잃지 않고도 Claude가 빠르고 반응성 있게 유지됩니다.
 
-If incorrect: The correct answer is B. `/compact` doesn't delete anything — it creates a compressed summary of your conversation history. This frees up context window space so you can keep going in long sessions without hitting limits or slowing down. Your important context is preserved.
+오답인 경우: 정답은 B입니다. `/compact`는 아무것도 삭제하지 않습니다 — 대화 기록의 압축된 요약을 만듭니다. 이렇게 하면 컨텍스트 윈도우 공간이 확보되어 한계에 부딪히거나 속도가 느려지지 않고 긴 세션을 계속 진행할 수 있습니다. 중요한 컨텍스트는 보존됩니다.
 
-### Question 3: What is the difference between /clear and /compact?
+### 질문 3: /clear와 /compact의 차이는 무엇인가요?
 
-Present these options to the student:
-A) They do the same thing
-B) /clear resets the entire conversation (fresh start), /compact summarizes it (keeps context but frees space)
-C) /clear compacts and /compact clears
-D) /clear is for files, /compact is for messages
+학생에게 다음 선택지를 제시하세요:
+A) 둘 다 같은 일을 합니다
+B) /clear는 전체 대화를 초기화(새로 시작)하고, /compact는 대화를 요약(컨텍스트를 유지하면서 공간 확보)합니다
+C) /clear가 압축하고 /compact가 지웁니다
+D) /clear는 파일용이고 /compact는 메시지용입니다
 
---- AFTER STUDENT RESPONDS ---
+--- 학생이 응답한 후 ---
 
-The correct answer is B.
+정답은 B입니다.
 
-If correct: Perfect! This is an important distinction. `/clear` is a hard reset — Claude forgets everything and you start fresh. `/compact` is a soft compression — Claude keeps a summary of what happened, frees up space, and you continue the same thread. Use `/clear` when you're done with a topic; use `/compact` when you want to keep going.
+정답인 경우: 완벽합니다! 이것은 중요한 구분입니다. `/clear`는 완전한 초기화입니다 — Claude는 모든 것을 잊고 새로 시작합니다. `/compact`는 부드러운 압축입니다 — Claude는 무슨 일이 있었는지 요약을 유지하고, 공간을 확보하며, 같은 맥락을 이어갑니다. 주제가 끝났을 때는 `/clear`를 사용하고, 계속 진행하고 싶을 때는 `/compact`를 사용하세요.
 
-If incorrect: The correct answer is B. `/clear` wipes the slate completely — after running it, Claude has no memory of your previous messages. `/compact` instead creates a summary, preserving the important context while freeing up space. They are opposites in approach: one forgets, one summarizes.
+오답인 경우: 정답은 B입니다. `/clear`는 슬레이트를 완전히 지웁니다 — 실행 후 Claude는 이전 메시지를 전혀 기억하지 못합니다. `/compact`는 대신 요약을 만들어 중요한 컨텍스트를 보존하면서 공간을 확보합니다. 두 명령어는 접근 방식에서 반대입니다: 하나는 잊고, 하나는 요약합니다.
 
-## Hands-On Challenge
+## 실습 챌린지
 
-### Challenge: Explore slash commands and document them
+### 챌린지: 슬래시 명령어를 탐색하고 문서화하기
 
-Tell the student:
-"Now let's practice using slash commands. Type `/` in a Claude Code chat to open the slash command menu and explore what's available. Then create a file called `workshop-slash-commands.md` that documents at least 5 slash commands you discovered.
+학생에게 안내하세요:
+"이제 슬래시 명령어를 실습해봅시다. Claude Code 채팅창에서 `/`를 입력하여 슬래시 명령어 메뉴를 열고 사용 가능한 명령어들을 탐색해보세요. 그런 다음 발견한 슬래시 명령어 중 5개 이상을 문서화한 `workshop-slash-commands.md` 파일을 만드세요.
 
-For each command, write the command name starting with `/` followed by a brief description of what it does. For example:
+각 명령어에 대해 `/`로 시작하는 명령어 이름과 그 기능에 대한 간단한 설명을 작성하세요. 예를 들어:
 ```
-/help - Shows documentation about Claude Code features and available commands
+/help - Claude Code의 기능과 사용 가능한 명령어에 대한 문서를 보여줍니다
 ```
 
-Go ahead and explore the commands, then create the file. When you're done, let me know and I'll verify your work."
+명령어를 탐색하고 파일을 만들어보세요. 완료하면 알려주시면 확인하겠습니다."
 
-Let the student work on this. When they say they're done or ask you to check:
+학생이 작업하도록 기다리세요. 완료했다고 하거나 확인을 요청하면:
 
-### Verification
+### 검증
 
-1. Use the Read tool to read `workshop-slash-commands.md`.
-   - If the file does not exist: "The file `workshop-slash-commands.md` wasn't found in the current directory. Make sure you ask Claude to create it (or create it yourself) with the slash command documentation."
+1. Read 도구를 사용하여 `workshop-slash-commands.md`를 읽으세요.
+   - 파일이 존재하지 않는 경우: "`workshop-slash-commands.md` 파일이 현재 디렉토리에 없습니다. Claude에게 슬래시 명령어 문서와 함께 파일을 만들어달라고 요청하세요 (또는 직접 만드세요)."
 
-2. Count how many lines in the file start with `/` (a slash command entry).
-   - If fewer than 5 lines start with `/`: "Not quite — I found fewer than 5 slash command entries. Each command should be on its own line starting with `/`. Add more commands until you have at least 5 documented."
+2. `/`로 시작하는 줄의 수를 세세요 (슬래시 명령어 항목).
+   - `/`로 시작하는 줄이 5개 미만인 경우: "아직 부족합니다 — 5개 미만의 슬래시 명령어 항목을 찾았습니다. 각 명령어는 `/`로 시작하는 별도의 줄에 있어야 합니다. 최소 5개가 문서화될 때까지 더 추가하세요."
 
-3. Check that each line starting with `/` also contains descriptive text after the command name (not just the command alone).
-   - If any line has only a command with no description: "Almost there — some entries are missing descriptions. Each command line should include a brief explanation of what the command does, like: `/clear - Resets the conversation to a fresh start`"
+3. `/`로 시작하는 각 줄에 명령어 이름 뒤에 설명 텍스트가 포함되어 있는지 확인하세요 (명령어만 있는 경우 제외).
+   - 설명 없이 명령어만 있는 줄이 있는 경우: "거의 다 됐습니다 — 일부 항목에 설명이 없습니다. 각 명령어 줄에는 해당 명령어의 기능에 대한 간단한 설명이 포함되어야 합니다. 예: `/clear - 대화를 새로 시작합니다`"
 
-If all checks pass: "Challenge passed! You've explored Claude Code's slash commands and documented them. You now have a personal reference for the commands you'll use most."
+모든 확인이 통과되면: "챌린지 통과! Claude Code의 슬래시 명령어를 탐색하고 문서화했습니다. 이제 가장 자주 사용할 명령어들에 대한 개인 참고 자료가 생겼습니다."
 
-## Progress Update
+## 진행 상황 업데이트
 
-After completing the quiz and challenge, update the student's progress:
+퀴즈와 챌린지를 완료한 후 학생의 진행 상황을 업데이트하세요:
 
-1. Read `.claude-workshop/progress.json` (create with defaults if missing):
-   Default schema:
+1. `.claude-workshop/progress.json`을 읽으세요 (없으면 기본값으로 생성):
+   기본 스키마:
    ```json
    {
      "version": "1.0",
-     "started_at": "<current ISO timestamp>",
-     "last_active": "<current ISO timestamp>",
+     "started_at": "<현재 ISO 타임스탬프>",
+     "last_active": "<현재 ISO 타임스탬프>",
      "lessons": {
        "lesson-1-prompting": { "status": "not-started" },
        "lesson-2-file-editing": { "status": "not-started" },
@@ -129,17 +129,17 @@ After completing the quiz and challenge, update the student's progress:
      }
    }
    ```
-2. Update `lesson-4-slash-commands`: set `quiz_score`, `quiz_total` (3), `challenge_passed` (true/false), `status` ("completed"), `completed_at` (current ISO timestamp).
-3. Update `last_active` to the current ISO timestamp.
-4. Write back to `.claude-workshop/progress.json`.
-5. Count lessons with `"status": "completed"`. If all 6 are complete, show:
+2. `lesson-4-slash-commands`를 업데이트하세요: `quiz_score`, `quiz_total` (3), `challenge_passed` (true/false), `status` ("completed"), `completed_at` (현재 ISO 타임스탬프)를 설정하세요.
+3. `last_active`를 현재 ISO 타임스탬프로 업데이트하세요.
+4. `.claude-workshop/progress.json`에 다시 저장하세요.
+5. `"status": "completed"`인 레슨 수를 세세요. 6개 모두 완료된 경우 다음을 표시하세요:
    ```
-   *** WORKSHOP COMPLETE! You've finished all 6 lessons. ***
+   *** 워크샵 완료! 6개의 레슨을 모두 마쳤습니다. ***
    ```
 
-## What's Next?
+## 다음 단계
 
-Offer the student:
-1. Continue to Lesson 5: CLAUDE.md & Project Context — giving Claude persistent project instructions
-2. Return to the lesson menu (`/claude-code-workshop:start`)
-3. Review this lesson again
+학생에게 다음을 제안하세요:
+1. 레슨 5로 계속: CLAUDE.md & 프로젝트 컨텍스트 — Claude에게 지속적인 프로젝트 지침 제공하기
+2. 레슨 메뉴로 돌아가기 (`/claude-code-workshop:start`)
+3. 이 레슨 다시 복습하기

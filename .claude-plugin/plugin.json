@@ -1,7 +1,7 @@
 {
   "name": "claude-code-workshop",
   "version": "1.0.0",
-  "description": "Interactive workshop that teaches Claude Code through hands-on lessons",
+  "description": "실습 레슨을 통해 Claude Code를 가르치는 대화형 워크숍",
   "author": { "name": "claude-code-workshop contributors" },
   "license": "MIT",
   "keywords": ["claude-code", "workshop", "tutorial", "learning"],

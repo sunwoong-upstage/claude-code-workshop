@@ -1,120 +1,120 @@
 ---
 name: lesson-5-claude-md
-description: "Lesson 5: CLAUDE.md & Project Context — teach Claude about your project"
+description: "레슨 5: CLAUDE.md & 프로젝트 컨텍스트 — Claude에게 프로젝트를 알려주기"
 ---
 
-# Lesson 5: CLAUDE.md & Project Context
+# 레슨 5: CLAUDE.md & 프로젝트 컨텍스트
 
 <Purpose>
-Teach the student how to use CLAUDE.md to give Claude persistent project context. Present the material conversationally, use concrete examples of good vs. poor CLAUDE.md content, and guide the student through an interactive quiz and a hands-on challenge. Be encouraging throughout.
+학생에게 CLAUDE.md를 사용하여 Claude에게 지속적인 프로젝트 컨텍스트를 제공하는 방법을 가르칩니다. 대화체로 내용을 전달하고, 좋은 CLAUDE.md와 그렇지 않은 CLAUDE.md의 구체적인 예시를 활용하며, 인터랙티브 퀴즈와 실습 챌린지를 통해 학생을 안내합니다. 내내 격려하는 태도를 유지하세요.
 </Purpose>
 
-## Introduction
+## 소개
 
-CLAUDE.md is a special file that Claude Code reads automatically when you start a session. It's like a briefing document — you tell Claude about your project's conventions, tech stack, testing requirements, and coding style. Instead of explaining your project setup every time, you write it once in CLAUDE.md and Claude always knows.
+CLAUDE.md는 세션을 시작할 때 Claude Code가 자동으로 읽는 특별한 파일입니다. 브리핑 문서와 같습니다 — 프로젝트의 컨벤션, 기술 스택, 테스트 요구사항, 코딩 스타일을 Claude에게 알려줍니다. 매번 프로젝트 설정을 설명하는 대신, CLAUDE.md에 한 번 작성해두면 Claude가 항상 그 내용을 알고 있습니다.
 
-There are two types of CLAUDE.md files. The **project CLAUDE.md** lives in your repository root and is shared with your entire team — everyone gets the same project-level context. The **user CLAUDE.md** lives at `~/.claude/CLAUDE.md` and holds your personal preferences that apply across all your projects, like your preferred coding style or tools you always use.
+CLAUDE.md 파일에는 두 가지 유형이 있습니다. **프로젝트 CLAUDE.md**는 저장소 루트에 위치하며 팀 전체와 공유됩니다 — 모든 사람이 동일한 프로젝트 수준의 컨텍스트를 얻습니다. **사용자 CLAUDE.md**는 `~/.claude/CLAUDE.md`에 위치하며 모든 프로젝트에 적용되는 개인 선호도를 담습니다. 예를 들어 선호하는 코딩 스타일이나 항상 사용하는 도구 같은 것들입니다.
 
-A good CLAUDE.md includes: the project's purpose, the tech stack, coding conventions, test commands, and any architecture notes that Claude needs to make good decisions. Keep it concise — Claude reads the whole file at the start of every session, so shorter and clearer is better than exhaustive.
+좋은 CLAUDE.md에는 다음이 포함됩니다: 프로젝트의 목적, 기술 스택, 코딩 컨벤션, 테스트 명령어, 그리고 Claude가 올바른 결정을 내리는 데 필요한 아키텍처 메모. 간결하게 유지하세요 — Claude는 세션 시작 시 파일 전체를 읽으므로, 장황한 것보다 짧고 명확한 것이 좋습니다.
 
-## Key Concepts
+## 핵심 개념
 
-- **CLAUDE.md purpose and location** — a briefing file Claude reads automatically at session start; project CLAUDE.md goes in the repo root
-- **Project vs user CLAUDE.md** — project (`./CLAUDE.md`) is shared with the team; user (`~/.claude/CLAUDE.md`) holds personal preferences
-- **What to include** — coding style, test commands, tech stack, architecture notes, naming conventions
-- **How Claude reads it** — automatically at the start of every session; no manual loading needed
+- **CLAUDE.md의 목적과 위치** — 세션 시작 시 Claude가 자동으로 읽는 브리핑 파일; 프로젝트 CLAUDE.md는 저장소 루트에 위치합니다
+- **프로젝트 vs 사용자 CLAUDE.md** — 프로젝트(`./CLAUDE.md`)는 팀과 공유되고, 사용자(`~/.claude/CLAUDE.md`)는 개인 선호도를 담습니다
+- **포함할 내용** — 코딩 스타일, 테스트 명령어, 기술 스택, 아키텍처 메모, 명명 규칙
+- **Claude가 읽는 방법** — 매 세션 시작 시 자동으로 읽습니다; 수동으로 로드할 필요가 없습니다
 
-## Interactive Quiz
+## 인터랙티브 퀴즈
 
-IMPORTANT: For each question below, present ONLY the question and the four options to the student using AskUserQuestion. Do NOT reveal, hint at, or confirm the correct answer until the student has explicitly made their choice. Wait for the student to respond before continuing.
+중요: 아래 각 질문에 대해 AskUserQuestion을 사용하여 학생에게 질문과 네 가지 선택지만 제시하세요. 학생이 명시적으로 선택하기 전까지 정답을 밝히거나 암시하거나 확인하지 마세요. 학생이 응답할 때까지 기다린 후 계속 진행하세요.
 
-### Question 1: What is CLAUDE.md and where does it go?
+### 질문 1: CLAUDE.md는 무엇이며 어디에 위치하나요?
 
-Present these options to the student:
-A) A readme file that goes anywhere
-B) A special instructions file in your project root that Claude reads automatically at the start of every session
-C) A configuration file in ~/.config/
-D) A markdown template for documentation
+학생에게 다음 선택지를 제시하세요:
+A) 어디에나 둘 수 있는 readme 파일입니다
+B) 매 세션 시작 시 Claude가 자동으로 읽는 프로젝트 루트의 특별한 지침 파일입니다
+C) ~/.config/에 있는 설정 파일입니다
+D) 문서용 마크다운 템플릿입니다
 
---- AFTER STUDENT RESPONDS ---
+--- 학생이 응답한 후 ---
 
-The correct answer is B.
+정답은 B입니다.
 
-If correct: Exactly right! CLAUDE.md is Claude's briefing document — it lives in your project root and is read automatically every time you start a Claude Code session in that directory. No imports, no commands needed.
+정답인 경우: 정확히 맞췄습니다! CLAUDE.md는 Claude의 브리핑 문서입니다 — 프로젝트 루트에 위치하며 해당 디렉토리에서 Claude Code 세션을 시작할 때마다 자동으로 읽힙니다. import도, 명령어도 필요 없습니다.
 
-If incorrect: The correct answer is B. CLAUDE.md is a special file Claude Code looks for in your project root at the start of every session. It acts as a persistent briefing: you write your project's conventions, stack, and commands once, and Claude always has that context.
+오답인 경우: 정답은 B입니다. CLAUDE.md는 매 세션 시작 시 Claude Code가 프로젝트 루트에서 찾는 특별한 파일입니다. 지속적인 브리핑 역할을 합니다: 프로젝트의 컨벤션, 스택, 명령어를 한 번 작성하면 Claude가 항상 그 컨텍스트를 가지고 있습니다.
 
-### Question 2: What is the difference between project CLAUDE.md and user CLAUDE.md?
+### 질문 2: 프로젝트 CLAUDE.md와 사용자 CLAUDE.md의 차이는 무엇인가요?
 
-Present these options to the student:
-A) They're the same thing
-B) Project CLAUDE.md is in your repo (shared with team), user CLAUDE.md is in ~/.claude/ (personal preferences)
-C) Project is for production, user is for development
-D) There's only one CLAUDE.md
+학생에게 다음 선택지를 제시하세요:
+A) 둘 다 같은 것입니다
+B) 프로젝트 CLAUDE.md는 저장소에 있고(팀과 공유), 사용자 CLAUDE.md는 ~/.claude/에 있습니다(개인 선호도)
+C) 프로젝트는 프로덕션용이고 사용자는 개발용입니다
+D) CLAUDE.md는 하나뿐입니다
 
---- AFTER STUDENT RESPONDS ---
+--- 학생이 응답한 후 ---
 
-The correct answer is B.
+정답은 B입니다.
 
-If correct: Perfect! The project CLAUDE.md in your repo root is committed to version control and shared with the whole team. The user CLAUDE.md at ~/.claude/CLAUDE.md is personal — your preferred tools, style rules, and habits that apply to every project you work on.
+정답인 경우: 완벽합니다! 저장소 루트에 있는 프로젝트 CLAUDE.md는 버전 관리에 커밋되어 팀 전체와 공유됩니다. ~/.claude/CLAUDE.md에 있는 사용자 CLAUDE.md는 개인적입니다 — 작업하는 모든 프로젝트에 적용되는 선호하는 도구, 스타일 규칙, 습관들입니다.
 
-If incorrect: The correct answer is B. Think of it this way: the project CLAUDE.md (in `./`) is for team-wide conventions that everyone should follow. The user CLAUDE.md (in `~/.claude/`) is for your personal preferences — the things you always want Claude to know about how you like to work, regardless of which project you're in.
+오답인 경우: 정답은 B입니다. 이렇게 생각해보세요: `./`에 있는 프로젝트 CLAUDE.md는 모든 사람이 따라야 할 팀 전체의 컨벤션을 위한 것입니다. `~/.claude/`에 있는 사용자 CLAUDE.md는 개인 선호도를 위한 것입니다 — 어떤 프로젝트를 하든 Claude에게 항상 알려주고 싶은 작업 방식에 관한 것들입니다.
 
-### Question 3: Which of these is the BEST thing to put in CLAUDE.md?
+### 질문 3: CLAUDE.md에 넣기 가장 좋은 것은 무엇인가요?
 
-Present these options to the student:
-A) Your entire codebase copied into it
-B) "Always use TypeScript with strict mode. Run tests with: npm test. Follow the existing naming convention in src/."
-C) "Be a good AI"
-D) API keys and passwords
+학생에게 다음 선택지를 제시하세요:
+A) 전체 코드베이스를 복사해서 넣기
+B) "항상 strict 모드로 TypeScript를 사용하세요. 테스트는 npm test로 실행하세요. src/의 기존 명명 규칙을 따르세요."
+C) "좋은 AI가 되세요"
+D) API 키와 비밀번호
 
---- AFTER STUDENT RESPONDS ---
+--- 학생이 응답한 후 ---
 
-The correct answer is B.
+정답은 B입니다.
 
-If correct: Great choice! Option B is specific and actionable — it tells Claude the language, the compiler strictness setting, the test command, and the naming convention. Claude can apply all of that immediately without asking.
+정답인 경우: 좋은 선택입니다! B 옵션은 구체적이고 실행 가능합니다 — 언어, 컴파일러 엄격성 설정, 테스트 명령어, 명명 규칙을 Claude에게 알려줍니다. Claude는 묻지 않고도 이 모든 것을 즉시 적용할 수 있습니다.
 
-If incorrect: The correct answer is B. Option A is too large — Claude reads the whole file at session start and you don't want it bloated with code. Option C is too vague to be useful. Option D is a serious security risk — never put secrets in CLAUDE.md since it's committed to version control. Option B is ideal: specific language settings, the test command, and a concrete style rule.
+오답인 경우: 정답은 B입니다. A 옵션은 너무 큽니다 — Claude는 세션 시작 시 파일 전체를 읽으므로 코드로 가득 차면 안 됩니다. C 옵션은 너무 모호하여 유용하지 않습니다. D 옵션은 심각한 보안 위험입니다 — CLAUDE.md는 버전 관리에 커밋되므로 절대 비밀을 넣지 마세요. B 옵션이 이상적입니다: 구체적인 언어 설정, 테스트 명령어, 구체적인 스타일 규칙.
 
-## Hands-On Challenge
+## 실습 챌린지
 
-### Challenge: Create a CLAUDE.md for this project
+### 챌린지: 이 프로젝트를 위한 CLAUDE.md 만들기
 
-Tell the student:
-"Now let's practice! Create a `CLAUDE.md` file in the current directory. It should include at least:
-1. A brief project description (one or two sentences about what this project is)
-2. A coding style or convention rule (e.g., naming conventions, indentation, language version)
-3. A test command or build instruction (e.g., `npm test`, `python -m pytest`, `make build`)
+학생에게 안내하세요:
+"이제 실습해봅시다! 현재 디렉토리에 `CLAUDE.md` 파일을 만드세요. 최소한 다음을 포함해야 합니다:
+1. 간단한 프로젝트 설명 (이 프로젝트가 무엇인지 한두 문장)
+2. 코딩 스타일 또는 컨벤션 규칙 (예: 명명 규칙, 들여쓰기, 언어 버전)
+3. 테스트 명령어 또는 빌드 지침 (예: `npm test`, `python -m pytest`, `make build`)
 
-Go ahead and create the file. When you're done, let me know and I'll verify it."
+파일을 만들어보세요. 완료하면 알려주시면 확인하겠습니다."
 
-Let the student work on this. When they say they're done or ask you to check:
+학생이 작업하도록 기다리세요. 완료했다고 하거나 확인을 요청하면:
 
-### Verification
+### 검증
 
-1. Use the Read tool to read `CLAUDE.md` in the current working directory.
-2. Check that the file exists and has at least 3 non-empty lines.
-3. Check that the file contains at least one of these project instruction keywords: "test", "style", "convention", "build", "run", "npm", "python", "make", "install", "lint", "format", "typescript", "javascript".
+1. Read 도구를 사용하여 현재 작업 디렉토리의 `CLAUDE.md`를 읽으세요.
+2. 파일이 존재하고 비어있지 않은 줄이 3개 이상인지 확인하세요.
+3. 파일에 다음 프로젝트 지침 키워드 중 하나 이상이 포함되어 있는지 확인하세요: "test", "style", "convention", "build", "run", "npm", "python", "make", "install", "lint", "format", "typescript", "javascript".
 
-If all checks pass: "Challenge passed! You've written a CLAUDE.md that gives Claude real project context. Next time you open Claude Code in this directory, it will have this briefing automatically — no extra prompting needed."
+모든 확인이 통과되면: "챌린지 통과! Claude에게 실제 프로젝트 컨텍스트를 제공하는 CLAUDE.md를 작성했습니다. 다음에 이 디렉토리에서 Claude Code를 열면, 별도의 프롬프트 없이 자동으로 이 브리핑을 갖게 됩니다."
 
-If the file does not exist: "Not quite — the file `CLAUDE.md` wasn't found in the current directory. Try asking Claude to create it with a project description, a style rule, and a command."
+파일이 존재하지 않는 경우: "아직 부족합니다 — 현재 디렉토리에서 `CLAUDE.md` 파일을 찾을 수 없습니다. Claude에게 프로젝트 설명, 스타일 규칙, 명령어를 포함한 파일을 만들어달라고 요청해보세요."
 
-If the file exists but has fewer than 3 non-empty lines: "Close! The file exists but needs a bit more content. Make sure you have at least a project description, a style rule, and a command."
+파일은 있지만 비어있지 않은 줄이 3개 미만인 경우: "거의 다 됐습니다! 파일은 있지만 내용이 조금 더 필요합니다. 프로젝트 설명, 스타일 규칙, 명령어가 모두 포함되어 있는지 확인하세요."
 
-If the file has no instruction keywords: "The file exists but doesn't seem to contain any project instructions. Try adding a test command (like `npm test`) or a style rule (like 'use TypeScript strict mode')."
+파일에 지침 키워드가 없는 경우: "파일은 있지만 프로젝트 지침이 포함되어 있지 않은 것 같습니다. 테스트 명령어(예: `npm test`)나 스타일 규칙(예: 'TypeScript strict 모드 사용')을 추가해보세요."
 
-## Progress Update
+## 진행 상황 업데이트
 
-After completing the quiz and challenge, update the student's progress:
+퀴즈와 챌린지를 완료한 후 학생의 진행 상황을 업데이트하세요:
 
-1. Read `.claude-workshop/progress.json` (create with defaults if missing):
-   Default schema:
+1. `.claude-workshop/progress.json`을 읽으세요 (없으면 기본값으로 생성):
+   기본 스키마:
    ```json
    {
      "version": "1.0",
-     "started_at": "<current ISO timestamp>",
-     "last_active": "<current ISO timestamp>",
+     "started_at": "<현재 ISO 타임스탬프>",
+     "last_active": "<현재 ISO 타임스탬프>",
      "lessons": {
        "lesson-1-prompting": { "status": "not-started" },
        "lesson-2-file-editing": { "status": "not-started" },
@@ -125,17 +125,17 @@ After completing the quiz and challenge, update the student's progress:
      }
    }
    ```
-2. Update `lesson-5-claude-md`: set `quiz_score`, `quiz_total` (3), `challenge_passed` (true/false), `status` ("completed"), `completed_at` (current ISO timestamp).
-3. Update `last_active` to the current ISO timestamp.
-4. Write back to `.claude-workshop/progress.json`.
-5. Count lessons with `"status": "completed"`. If all 6 are complete, show:
+2. `lesson-5-claude-md`를 업데이트하세요: `quiz_score`, `quiz_total` (3), `challenge_passed` (true/false), `status` ("completed"), `completed_at` (현재 ISO 타임스탬프)를 설정하세요.
+3. `last_active`를 현재 ISO 타임스탬프로 업데이트하세요.
+4. `.claude-workshop/progress.json`에 다시 저장하세요.
+5. `"status": "completed"`인 레슨 수를 세세요. 6개 모두 완료된 경우 다음을 표시하세요:
    ```
-   *** WORKSHOP COMPLETE! You've finished all 6 lessons. ***
+   *** 워크샵 완료! 6개의 레슨을 모두 마쳤습니다. ***
    ```
 
-## What's Next?
+## 다음 단계
 
-Offer the student:
-1. Continue to Lesson 6: Finding & Using Plugins — extend Claude Code with community plugins
-2. Return to the lesson menu (`/claude-code-workshop:start`)
-3. Review this lesson again
+학생에게 다음을 제안하세요:
+1. 레슨 6으로 계속: 플러그인 찾기 & 사용하기 — 커뮤니티 플러그인으로 Claude Code 확장하기
+2. 레슨 메뉴로 돌아가기 (`/claude-code-workshop:start`)
+3. 이 레슨 다시 복습하기

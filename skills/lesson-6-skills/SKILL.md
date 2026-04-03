@@ -1,128 +1,128 @@
 ---
 name: lesson-6-skills
-description: "Lesson 6: Finding & Using Plugins — extend Claude Code with community plugins"
+description: "레슨 6: 플러그인 찾기 & 사용하기 — 커뮤니티 플러그인으로 Claude Code 확장하기"
 ---
 
-# Lesson 6: Finding & Using Plugins
+# 레슨 6: 플러그인 찾기 & 사용하기
 
 <Purpose>
-Teach the student how the Claude Code plugin ecosystem works, how plugins are installed, and how skills become slash commands. Use concrete examples from this workshop itself — the student is using a plugin right now. Guide the student through an interactive quiz and a hands-on challenge. Be encouraging throughout.
+학생에게 Claude Code 플러그인 생태계가 어떻게 작동하는지, 플러그인이 어떻게 설치되는지, 그리고 스킬이 슬래시 명령어가 되는 방법을 가르칩니다. 이 워크샵 자체의 구체적인 예시를 활용하세요 — 학생은 지금 플러그인을 사용하고 있습니다. 인터랙티브 퀴즈와 실습 챌린지를 통해 학생을 안내합니다. 내내 격려하는 태도를 유지하세요.
 </Purpose>
 
-## Introduction
+## 소개
 
-Claude Code has a plugin ecosystem that extends what it can do. Plugins add new slash commands — called skills — that give Claude Code new capabilities beyond what it ships with. Plugins are distributed as GitHub repositories and installed via the `claude plugin` command.
+Claude Code에는 할 수 있는 일을 확장하는 플러그인 생태계가 있습니다. 플러그인은 새로운 슬래시 명령어 — 스킬이라고 불리는 — 를 추가하여 기본 제공 기능 이상의 새로운 능력을 Claude Code에 부여합니다. 플러그인은 GitHub 저장소로 배포되며 `claude plugin` 명령어로 설치됩니다.
 
-Here's the exciting part: this workshop itself is a plugin! You installed it with `claude plugin marketplace add` and `claude plugin install`, and right now you're running its `/claude-code-workshop:start` skill. Everything you're doing in this lesson is made possible by the plugin system you're about to learn about.
+흥미로운 점은 이 워크샵 자체가 플러그인이라는 것입니다! `claude plugin marketplace add`와 `claude plugin install`로 설치했으며, 지금 바로 `/claude-code-workshop:start` 스킬을 실행하고 있습니다. 이 레슨에서 하는 모든 것이 여러분이 배우려는 플러그인 시스템 덕분에 가능합니다.
 
-A plugin is a GitHub repository that contains a `skills/` directory. Each subdirectory in `skills/` holds a `SKILL.md` file that defines what that skill does. When the plugin is installed, every skill automatically becomes a slash command in the format `/plugin-name:skill-name`. No manual registration, no config files — just a `SKILL.md` file in the right place.
+플러그인은 `skills/` 디렉토리를 포함하는 GitHub 저장소입니다. `skills/`의 각 하위 디렉토리에는 해당 스킬이 무엇을 하는지 정의하는 `SKILL.md` 파일이 있습니다. 플러그인이 설치되면 모든 스킬이 자동으로 `/플러그인이름:스킬이름` 형식의 슬래시 명령어가 됩니다. 수동 등록도, 설정 파일도 필요 없습니다 — 올바른 위치에 `SKILL.md` 파일만 있으면 됩니다.
 
-To install a plugin: first add it to your local plugin registry with `claude plugin marketplace add <github-url>`, then install it with `claude plugin install <plugin-name>`. From that point on, all its skills are available as slash commands.
+플러그인을 설치하려면: 먼저 `claude plugin marketplace add <github-url>`로 로컬 플러그인 레지스트리에 추가한 다음, `claude plugin install <플러그인이름>`으로 설치합니다. 그 이후부터 모든 스킬을 슬래시 명령어로 사용할 수 있습니다.
 
-## Key Concepts
+## 핵심 개념
 
-- **What plugins are** — GitHub repositories containing a `skills/` directory with `SKILL.md` files that add new slash commands
-- **How to install** — `claude plugin marketplace add <github-url>` to register, then `claude plugin install <plugin-name>` to activate
-- **How skills become slash commands** — each `skills/<name>/SKILL.md` automatically becomes `/plugin-name:name`
-- **Exploring available plugins** — browse the plugin's `skills/` directory to see all available commands
+- **플러그인이란 무엇인가** — 새로운 슬래시 명령어를 추가하는 `SKILL.md` 파일이 있는 `skills/` 디렉토리를 포함하는 GitHub 저장소
+- **설치 방법** — `claude plugin marketplace add <github-url>`로 등록한 다음 `claude plugin install <플러그인이름>`으로 활성화
+- **스킬이 슬래시 명령어가 되는 방법** — 각 `skills/<이름>/SKILL.md`가 자동으로 `/플러그인이름:이름`이 됩니다
+- **사용 가능한 플러그인 탐색** — 플러그인의 `skills/` 디렉토리를 살펴보면 사용 가능한 모든 명령어를 볼 수 있습니다
 
-## Interactive Quiz
+## 인터랙티브 퀴즈
 
-IMPORTANT: For each question below, present ONLY the question and the four options to the student using AskUserQuestion. Do NOT reveal, hint at, or confirm the correct answer until the student has explicitly made their choice. Wait for the student to respond before continuing.
+중요: 아래 각 질문에 대해 AskUserQuestion을 사용하여 학생에게 질문과 네 가지 선택지만 제시하세요. 학생이 명시적으로 선택하기 전까지 정답을 밝히거나 암시하거나 확인하지 마세요. 학생이 응답할 때까지 기다린 후 계속 진행하세요.
 
-### Question 1: What IS a Claude Code plugin?
+### 질문 1: Claude Code 플러그인이란 무엇인가요?
 
-Present these options to the student:
-A) A Chrome browser extension
-B) A GitHub repository containing skill files (SKILL.md) that add new slash commands to Claude Code
-C) A Python package installed with pip
-D) A VS Code extension
+학생에게 다음 선택지를 제시하세요:
+A) Chrome 브라우저 확장 프로그램
+B) Claude Code에 새로운 슬래시 명령어를 추가하는 스킬 파일(SKILL.md)을 포함하는 GitHub 저장소
+C) pip로 설치하는 Python 패키지
+D) VS Code 확장 프로그램
 
---- AFTER STUDENT RESPONDS ---
+--- 학생이 응답한 후 ---
 
-The correct answer is B.
+정답은 B입니다.
 
-If correct: Exactly! A Claude Code plugin is simply a GitHub repository with a specific structure — a `skills/` directory where each subdirectory contains a `SKILL.md` file. That's it. No compiled code, no package registry, just markdown files in the right layout.
+정답인 경우: 맞습니다! Claude Code 플러그인은 단순히 특정 구조를 가진 GitHub 저장소입니다 — 각 하위 디렉토리에 `SKILL.md` 파일이 있는 `skills/` 디렉토리. 그게 전부입니다. 컴파일된 코드도, 패키지 레지스트리도 없습니다 — 올바른 레이아웃의 마크다운 파일만 있으면 됩니다.
 
-If incorrect: The correct answer is B. Claude Code plugins aren't browser extensions, pip packages, or VS Code extensions. They're GitHub repositories with a `skills/` directory containing `SKILL.md` files. The plugin you're using right now — this workshop — is one such repository.
+오답인 경우: 정답은 B입니다. Claude Code 플러그인은 브라우저 확장 프로그램도, pip 패키지도, VS Code 확장 프로그램도 아닙니다. `SKILL.md` 파일을 포함하는 `skills/` 디렉토리가 있는 GitHub 저장소입니다. 지금 사용하고 있는 플러그인 — 이 워크샵 — 이 바로 그런 저장소입니다.
 
-### Question 2: How do you install a Claude Code plugin?
+### 질문 2: Claude Code 플러그인을 어떻게 설치하나요?
 
-Present these options to the student:
-A) npm install -g plugin-name
-B) pip install plugin-name
-C) claude plugin marketplace add <github-url> followed by claude plugin install
-D) Download a .zip file and extract it
+학생에게 다음 선택지를 제시하세요:
+A) npm install -g 플러그인이름
+B) pip install 플러그인이름
+C) claude plugin marketplace add <github-url> 후 claude plugin install
+D) .zip 파일을 다운로드하고 압축 해제
 
---- AFTER STUDENT RESPONDS ---
+--- 학생이 응답한 후 ---
 
-The correct answer is C.
+정답은 C입니다.
 
-IMPORTANT: Option A with npm is WRONG — this is the old deprecated method. Make sure to clarify this if the student chooses A.
+중요: A의 npm은 틀린 답입니다 — 이것은 구식의 더 이상 사용되지 않는 방법입니다. 학생이 A를 선택한 경우 반드시 이를 명확히 해주세요.
 
-If correct: Perfect! The two-step process is: `claude plugin marketplace add <github-url>` to register the plugin from its GitHub URL, then `claude plugin install <plugin-name>` to activate it. That's exactly how you installed this workshop.
+정답인 경우: 완벽합니다! 두 단계 과정은 이렇습니다: `claude plugin marketplace add <github-url>`로 GitHub URL에서 플러그인을 등록하고, `claude plugin install <플러그인이름>`으로 활성화합니다. 바로 이 워크샵을 설치한 방법입니다.
 
-If incorrect (and chose A): The correct answer is C, not A. `npm install -g` is the old, deprecated method for installing Claude Code plugins — it no longer works. The current method is `claude plugin marketplace add <github-url>` to register the plugin, then `claude plugin install <plugin-name>` to activate it.
+오답인 경우 (A를 선택한 경우): 정답은 A가 아닌 C입니다. `npm install -g`는 Claude Code 플러그인을 설치하는 구식의 더 이상 사용되지 않는 방법입니다 — 더 이상 작동하지 않습니다. 현재 방법은 `claude plugin marketplace add <github-url>`로 플러그인을 등록한 다음 `claude plugin install <플러그인이름>`으로 활성화하는 것입니다.
 
-If incorrect (chose B, D, or other): The correct answer is C. Plugins aren't Python packages or zip downloads. Use `claude plugin marketplace add <github-url>` to register the plugin from its GitHub URL, then `claude plugin install <plugin-name>` to activate it. This is exactly how you installed this workshop.
+오답인 경우 (B, D 또는 기타를 선택한 경우): 정답은 C입니다. 플러그인은 Python 패키지나 zip 다운로드가 아닙니다. `claude plugin marketplace add <github-url>`로 GitHub URL에서 플러그인을 등록한 다음, `claude plugin install <플러그인이름>`으로 활성화하세요. 바로 이 워크샵을 설치한 방법입니다.
 
-### Question 3: How do plugin skills become slash commands?
+### 질문 3: 플러그인 스킬은 어떻게 슬래시 명령어가 되나요?
 
-Present these options to the student:
-A) You manually register each command in a config file
-B) The plugin's skills/ directory contains SKILL.md files, each automatically becomes a /plugin-name:skill-name command
-C) You edit a global Claude Code settings file
-D) They don't — you have to call them differently
+학생에게 다음 선택지를 제시하세요:
+A) 설정 파일에 각 명령어를 수동으로 등록합니다
+B) 플러그인의 skills/ 디렉토리에 SKILL.md 파일이 있으며, 각각이 자동으로 /플러그인이름:스킬이름 명령어가 됩니다
+C) 전역 Claude Code 설정 파일을 편집합니다
+D) 그렇지 않습니다 — 다른 방식으로 호출해야 합니다
 
---- AFTER STUDENT RESPONDS ---
+--- 학생이 응답한 후 ---
 
-The correct answer is B.
+정답은 B입니다.
 
-If correct: Spot on! The naming is automatic and based on directory structure: a file at `skills/my-feature/SKILL.md` in a plugin called `my-plugin` becomes `/my-plugin:my-feature`. No registration, no config — just the file in the right place.
+정답인 경우: 정확합니다! 명명은 자동이며 디렉토리 구조를 기반으로 합니다: `my-plugin`이라는 플러그인에서 `skills/my-feature/SKILL.md`에 있는 파일은 `/my-plugin:my-feature`가 됩니다. 등록도, 설정도 필요 없습니다 — 올바른 위치에 파일만 있으면 됩니다.
 
-If incorrect: The correct answer is B. The plugin system uses a convention-over-configuration approach: every `skills/<name>/SKILL.md` in a plugin automatically becomes a `/plugin-name:name` slash command. You can explore what commands a plugin offers just by looking at its `skills/` directory on GitHub.
+오답인 경우: 정답은 B입니다. 플러그인 시스템은 설정보다 규칙을 우선하는 접근 방식을 사용합니다: 플러그인의 모든 `skills/<이름>/SKILL.md`가 자동으로 `/플러그인이름:이름` 슬래시 명령어가 됩니다. GitHub에서 플러그인의 `skills/` 디렉토리를 살펴보면 어떤 명령어를 제공하는지 알 수 있습니다.
 
-## Hands-On Challenge
+## 실습 챌린지
 
-### Challenge: Explore this workshop plugin's structure
+### 챌린지: 이 워크샵 플러그인의 구조 탐색하기
 
-Tell the student:
-"Since you're already running a plugin — this workshop — let's explore how it's structured from the inside! Here's your task:
+학생에게 안내하세요:
+"이미 플러그인을 실행 중이니 — 이 워크샵 — 내부에서 어떻게 구성되어 있는지 살펴봅시다! 과제는 다음과 같습니다:
 
-1. Use Claude Code to read the plugin manifest at `.claude-plugin/plugin.json` in the workshop directory at `/Users/sunwoong/dev/personal/claude-code-workshop/` (or wherever this workshop is installed).
-2. Look at the `skills/` directory and identify at least 3 skill folders.
-3. Create a file called `workshop-plugin-notes.md` in the current directory summarizing what you found: the plugin name, version, and at least 3 skills with their descriptions.
+1. Claude Code를 사용하여 `/Users/sunwoong/dev/personal/claude-code-workshop/` (또는 이 워크샵이 설치된 위치)의 워크샵 디렉토리에 있는 `.claude-plugin/plugin.json` 플러그인 매니페스트를 읽으세요.
+2. `skills/` 디렉토리를 살펴보고 스킬 폴더를 3개 이상 확인하세요.
+3. 현재 디렉토리에 `workshop-plugin-notes.md` 파일을 만들어 발견한 내용을 요약하세요: 플러그인 이름, 버전, 그리고 설명이 포함된 스킬 3개 이상.
 
-Go ahead and explore! When you're done creating the notes file, let me know and I'll verify it."
+탐색해보세요! 노트 파일을 만들었으면 알려주시면 확인하겠습니다."
 
-Let the student work on this. When they say they're done or ask you to check:
+학생이 작업하도록 기다리세요. 완료했다고 하거나 확인을 요청하면:
 
-### Verification
+### 검증
 
-1. Use the Read tool to read `workshop-plugin-notes.md` in the current working directory.
-2. Check that the file exists.
-3. Check that the file mentions "claude-code-workshop" (the plugin name).
-4. Check that the file mentions at least 3 skill names — look for any of: "start", "reset", "lesson-1", "lesson-2", "lesson-3", "lesson-4", "lesson-5", "lesson-6", "lesson".
+1. Read 도구를 사용하여 현재 작업 디렉토리의 `workshop-plugin-notes.md`를 읽으세요.
+2. 파일이 존재하는지 확인하세요.
+3. 파일에 "claude-code-workshop" (플러그인 이름)이 언급되어 있는지 확인하세요.
+4. 파일에 스킬 이름이 3개 이상 언급되어 있는지 확인하세요 — "start", "reset", "lesson-1", "lesson-2", "lesson-3", "lesson-4", "lesson-5", "lesson-6", "lesson" 중 하나를 찾아보세요.
 
-If all checks pass: "Challenge passed! You've explored a real plugin from the inside. Every Claude Code plugin works the same way — a GitHub repo, a plugin.json, and a skills/ directory. Now you know how to read any plugin's structure."
+모든 확인이 통과되면: "챌린지 통과! 실제 플러그인의 내부를 탐색했습니다. 모든 Claude Code 플러그인은 같은 방식으로 작동합니다 — GitHub 저장소, plugin.json, 그리고 skills/ 디렉토리. 이제 어떤 플러그인의 구조도 읽을 수 있습니다."
 
-If the file does not exist: "Not quite — `workshop-plugin-notes.md` wasn't found. Try asking Claude to read the plugin.json and skills/ directory, then create that file summarizing what it found."
+파일이 존재하지 않는 경우: "아직 부족합니다 — `workshop-plugin-notes.md`를 찾을 수 없습니다. Claude에게 plugin.json과 skills/ 디렉토리를 읽고 발견한 내용을 요약한 파일을 만들어달라고 요청해보세요."
 
-If the file exists but doesn't mention 'claude-code-workshop': "The file exists but doesn't mention the plugin name 'claude-code-workshop'. Make sure your notes include the plugin name from the plugin.json manifest."
+파일은 있지만 'claude-code-workshop'이 언급되지 않은 경우: "파일은 있지만 플러그인 이름 'claude-code-workshop'이 언급되어 있지 않습니다. 노트에 plugin.json 매니페스트의 플러그인 이름이 포함되어 있는지 확인하세요."
 
-If the file exists but doesn't mention 3 skills: "The file exists but I couldn't find 3 or more skill names. Make sure you list at least 3 of the skills from the skills/ directory (like 'start', 'reset', and any lesson skill)."
+파일은 있지만 스킬이 3개 미만인 경우: "파일은 있지만 스킬 이름을 3개 이상 찾을 수 없습니다. skills/ 디렉토리의 스킬을 3개 이상 나열했는지 확인하세요 (예: 'start', 'reset', 그리고 레슨 스킬 중 하나)."
 
-## Progress Update
+## 진행 상황 업데이트
 
-After completing the quiz and challenge, update the student's progress:
+퀴즈와 챌린지를 완료한 후 학생의 진행 상황을 업데이트하세요:
 
-1. Read `.claude-workshop/progress.json` (create with defaults if missing):
-   Default schema:
+1. `.claude-workshop/progress.json`을 읽으세요 (없으면 기본값으로 생성):
+   기본 스키마:
    ```json
    {
      "version": "1.0",
-     "started_at": "<current ISO timestamp>",
-     "last_active": "<current ISO timestamp>",
+     "started_at": "<현재 ISO 타임스탬프>",
+     "last_active": "<현재 ISO 타임스탬프>",
      "lessons": {
        "lesson-1-prompting": { "status": "not-started" },
        "lesson-2-file-editing": { "status": "not-started" },
@@ -133,17 +133,17 @@ After completing the quiz and challenge, update the student's progress:
      }
    }
    ```
-2. Update `lesson-6-skills`: set `quiz_score`, `quiz_total` (3), `challenge_passed` (true/false), `status` ("completed"), `completed_at` (current ISO timestamp).
-3. Update `last_active` to the current ISO timestamp.
-4. Write back to `.claude-workshop/progress.json`.
-5. Count lessons with `"status": "completed"`. If all 6 are complete, show:
+2. `lesson-6-skills`를 업데이트하세요: `quiz_score`, `quiz_total` (3), `challenge_passed` (true/false), `status` ("completed"), `completed_at` (현재 ISO 타임스탬프)를 설정하세요.
+3. `last_active`를 현재 ISO 타임스탬프로 업데이트하세요.
+4. `.claude-workshop/progress.json`에 다시 저장하세요.
+5. `"status": "completed"`인 레슨 수를 세세요. 6개 모두 완료된 경우 다음을 표시하세요:
    ```
-   *** WORKSHOP COMPLETE! You've finished all 6 lessons. ***
+   *** 워크샵 완료! 6개의 레슨을 모두 마쳤습니다. ***
    ```
 
-## What's Next?
+## 다음 단계
 
-Offer the student:
-1. Return to the lesson menu (`/claude-code-workshop:start`) to review any lessons
-2. Explore the Claude Code plugin marketplace to find more plugins
-3. Try creating your own plugin — start with a `skills/` directory and a `SKILL.md` file!
+학생에게 다음을 제안하세요:
+1. 레슨 메뉴로 돌아가기 (`/claude-code-workshop:start`) — 어떤 레슨이든 다시 복습하기
+2. Claude Code 플러그인 마켓플레이스를 탐색하여 더 많은 플러그인 찾기
+3. 나만의 플러그인 만들어보기 — `skills/` 디렉토리와 `SKILL.md` 파일로 시작하세요!
