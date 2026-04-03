@@ -38,7 +38,8 @@ Claude Code 대화형 워크숍에 오신 것을 환영합니다!
     "lesson-3-commands": { "status": "not-started" },
     "lesson-4-slash-commands": { "status": "not-started" },
     "lesson-5-claude-md": { "status": "not-started" },
-    "lesson-6-skills": { "status": "not-started" }
+    "lesson-6-skills": { "status": "not-started" },
+    "lesson-7-creating-skills": { "status": "not-started" }
   }
 }
 ```
@@ -47,7 +48,7 @@ Claude Code 대화형 워크숍에 오신 것을 환영합니다!
 
 불러온 진행 데이터에서:
 - `total_completed` = `status === "completed"`인 레슨의 수
-- `all_complete` = (`total_completed === 6`)
+- `all_complete` = (`total_completed === 7`)
 
 ### Step 4: If all_complete, Show Completion Badge
 
@@ -58,7 +59,7 @@ Claude Code 대화형 워크숍에 오신 것을 환영합니다!
   축하합니다! 워크숍 완료!
 ========================================
 
-6개 레슨을 모두 완료했습니다!
+7개 레슨을 모두 완료했습니다!
 
 결과:
   레슨 1: 프롬프팅          -- {quiz_score}/{quiz_total} 퀴즈, 챌린지 {통과/실패}
@@ -67,6 +68,7 @@ Claude Code 대화형 워크숍에 오신 것을 환영합니다!
   레슨 4: 슬래시 명령어     -- {quiz_score}/{quiz_total} 퀴즈, 챌린지 {통과/실패}
   레슨 5: CLAUDE.md         -- {quiz_score}/{quiz_total} 퀴즈, 챌린지 {통과/실패}
   레슨 6: 스킬 & 플러그인   -- {quiz_score}/{quiz_total} 퀴즈, 챌린지 {통과/실패}
+  레슨 7: 스킬 만들기       -- {quiz_score}/{quiz_total} 퀴즈, 챌린지 {통과/실패}
 
 전체 퀴즈 점수: {sum}/{total}
 
@@ -84,7 +86,7 @@ Claude Code 대화형 워크숍에 오신 것을 환영합니다!
 레슨 메뉴를 표시하세요. 각 레슨의 status가 "completed"이면 `[DONE]`을, 아니면 `[    ]`을 표시:
 
 ```
-진행 상황: {total_completed}/6 레슨 완료
+진행 상황: {total_completed}/7 레슨 완료
 
 1. {[DONE] or [    ]} Claude와 대화하기 -- 효과적인 프롬프팅
 2. {[DONE] or [    ]} 파일 편집 -- 파일 생성, 읽기, 편집
@@ -92,15 +94,16 @@ Claude Code 대화형 워크숍에 오신 것을 환영합니다!
 4. {[DONE] or [    ]} 슬래시 명령어 & 단축키 -- /help, /clear, /compact
 5. {[DONE] or [    ]} CLAUDE.md & 프로젝트 컨텍스트 -- 프로젝트 지침
 6. {[DONE] or [    ]} 플러그인 찾기 & 사용하기 -- 커뮤니티 플러그인
+7. {[DONE] or [    ]} 나만의 스킬 만들기 -- SKILL.md와 Upstage API 활용
 ```
 
 ### Step 6: Ask the Student to Choose
 
 AskUserQuestion 도구를 사용하여 다음 질문을 하세요:
 
-> "시작하거나 계속할 레슨을 선택하세요. 번호(1-6)를 입력하거나 배우고 싶은 내용을 설명해 주세요:"
+> "시작하거나 계속할 레슨을 선택하세요. 번호(1-7)를 입력하거나 배우고 싶은 내용을 설명해 주세요:"
 
-다음 옵션을 제공하세요: `["1", "2", "3", "4", "5", "6", "특정 주제를 배우고 싶어요..."]`
+다음 옵션을 제공하세요: `["1", "2", "3", "4", "5", "6", "7", "특정 주제를 배우고 싶어요..."]`
 
 ### Step 7: Route Based on Selection
 
@@ -114,6 +117,7 @@ AskUserQuestion 도구를 사용하여 다음 질문을 하세요:
 | "4" | `Skill("claude-code-workshop:lesson-4-slash-commands")` |
 | "5" | `Skill("claude-code-workshop:lesson-5-claude-md")` |
 | "6" | `Skill("claude-code-workshop:lesson-6-skills")` |
+| "7" | `Skill("claude-code-workshop:lesson-7-creating-skills")` |
 
 ### Step 8: Handle Freeform Input
 
@@ -125,5 +129,6 @@ AskUserQuestion 도구를 사용하여 다음 질문을 하세요:
 - "slash", "shortcut", "/help", "/clear", "keyboard" → `Skill("claude-code-workshop:lesson-4-slash-commands")` 호출
 - "claude.md", "project", "context", "memory", "instructions" → `Skill("claude-code-workshop:lesson-5-claude-md")` 호출
 - "skill", "plugin", "community", "install", "marketplace" → `Skill("claude-code-workshop:lesson-6-skills")` 호출
+- "만들기", "create skill", "SKILL.md", "upstage", "API 연동", "스킬 제작" → `Skill("claude-code-workshop:lesson-7-creating-skills")` 호출
 
 키워드가 일치하지 않으면, 사용자에게 관심 있는 레슨 주제를 명확히 해달라고 요청하고 다시 프롬프트를 표시하세요.

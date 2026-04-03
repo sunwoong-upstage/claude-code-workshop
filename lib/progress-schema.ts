@@ -41,7 +41,7 @@ export interface WorkshopProgress {
   last_active: string;
   /**
    * Per-lesson progress keyed by lesson identifier.
-   * All 6 lesson keys must always be present (initialized to "not-started").
+   * All 7 lesson keys must always be present (initialized to "not-started").
    */
   lessons: {
     lesson_01_navigation: LessonProgress;
@@ -50,13 +50,14 @@ export interface WorkshopProgress {
     lesson_04_terminal: LessonProgress;
     lesson_05_git: LessonProgress;
     lesson_06_agents: LessonProgress;
+    lesson_07_creating_skills: LessonProgress;
   };
   //
   // NOTE: `total_completed` and `all_complete` are DERIVED on read, NOT stored.
   //
   // To derive:
   //   total_completed = Object.values(lessons).filter(l => l.status === "completed").length
-  //   all_complete    = (total_completed === 6)
+  //   all_complete    = (total_completed === 7)
   //
   // Never write these fields back to progress.json.
 }
@@ -78,5 +79,6 @@ export const DEFAULT_PROGRESS: WorkshopProgress = {
     lesson_04_terminal: { status: "not-started" },
     lesson_05_git: { status: "not-started" },
     lesson_06_agents: { status: "not-started" },
+    lesson_07_creating_skills: { status: "not-started" },
   },
 };

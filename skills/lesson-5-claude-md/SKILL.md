@@ -121,16 +121,17 @@ D) API 키와 비밀번호
        "lesson-3-commands": { "status": "not-started" },
        "lesson-4-slash-commands": { "status": "not-started" },
        "lesson-5-claude-md": { "status": "not-started" },
-       "lesson-6-skills": { "status": "not-started" }
+       "lesson-6-skills": { "status": "not-started" },
+       "lesson-7-creating-skills": { "status": "not-started" }
      }
    }
    ```
 2. `lesson-5-claude-md`를 업데이트하세요: `quiz_score`, `quiz_total` (3), `challenge_passed` (true/false), `status` ("completed"), `completed_at` (현재 ISO 타임스탬프)를 설정하세요.
 3. `last_active`를 현재 ISO 타임스탬프로 업데이트하세요.
 4. `.claude-workshop/progress.json`에 다시 저장하세요.
-5. `"status": "completed"`인 레슨 수를 세세요. 6개 모두 완료된 경우 다음을 표시하세요:
+5. `"status": "completed"`인 레슨 수를 세세요. 7개 모두 완료된 경우 다음을 표시하세요:
    ```
-   *** 워크샵 완료! 6개의 레슨을 모두 마쳤습니다. ***
+   *** 워크샵 완료! 7개의 레슨을 모두 마쳤습니다. ***
    ```
 
 ## 다음 단계

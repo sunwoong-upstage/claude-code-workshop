@@ -129,21 +129,22 @@ D) 그렇지 않습니다 — 다른 방식으로 호출해야 합니다
        "lesson-3-commands": { "status": "not-started" },
        "lesson-4-slash-commands": { "status": "not-started" },
        "lesson-5-claude-md": { "status": "not-started" },
-       "lesson-6-skills": { "status": "not-started" }
+       "lesson-6-skills": { "status": "not-started" },
+       "lesson-7-creating-skills": { "status": "not-started" }
      }
    }
    ```
 2. `lesson-6-skills`를 업데이트하세요: `quiz_score`, `quiz_total` (3), `challenge_passed` (true/false), `status` ("completed"), `completed_at` (현재 ISO 타임스탬프)를 설정하세요.
 3. `last_active`를 현재 ISO 타임스탬프로 업데이트하세요.
 4. `.claude-workshop/progress.json`에 다시 저장하세요.
-5. `"status": "completed"`인 레슨 수를 세세요. 6개 모두 완료된 경우 다음을 표시하세요:
+5. `"status": "completed"`인 레슨 수를 세세요. 7개 모두 완료된 경우 다음을 표시하세요:
    ```
-   *** 워크샵 완료! 6개의 레슨을 모두 마쳤습니다. ***
+   *** 워크샵 완료! 7개의 레슨을 모두 마쳤습니다. ***
    ```
 
 ## 다음 단계
 
 학생에게 다음을 제안하세요:
-1. 레슨 메뉴로 돌아가기 (`/claude-code-workshop:start`) — 어떤 레슨이든 다시 복습하기
-2. Claude Code 플러그인 마켓플레이스를 탐색하여 더 많은 플러그인 찾기
-3. 나만의 플러그인 만들어보기 — `skills/` 디렉토리와 `SKILL.md` 파일로 시작하세요!
+1. 레슨 7: 나만의 스킬 만들기로 계속하기 — SKILL.md 작성법과 Upstage API 연동 실습
+2. 레슨 메뉴로 돌아가기 (`/claude-code-workshop:start`)
+3. 이 레슨 다시 복습하기

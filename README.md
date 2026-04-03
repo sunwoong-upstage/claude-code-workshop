@@ -22,7 +22,7 @@ claude plugin install claude-code-workshop
 
 ## 커리큘럼
 
-워크숍에는 6개의 실습 레슨이 포함되어 있습니다:
+워크숍에는 7개의 실습 레슨이 포함되어 있습니다:
 
 1. **Claude와 대화하기** — 효과적인 프롬프트 작성법 배우기
 2. **파일 편집** — Claude Code를 통해 파일 생성, 읽기, 편집하기
@@ -30,6 +30,7 @@ claude plugin install claude-code-workshop
 4. **슬래시 명령어 & 단축키** — 내장 명령어와 키보드 단축키 마스터하기
 5. **CLAUDE.md & 프로젝트 컨텍스트** — Claude에게 내 프로젝트 가르치기
 6. **플러그인 찾기 & 사용하기** — 커뮤니티 플러그인으로 Claude Code 확장하기
+7. **나만의 스킬 만들기** — SKILL.md로 시작해서 Upstage API 연동까지
 
 각 레슨에는 다음이 포함됩니다:
 - 예제가 포함된 설명 콘텐츠

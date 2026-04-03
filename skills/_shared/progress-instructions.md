@@ -21,7 +21,8 @@
     "lesson_03_multi_file": { "status": "not-started" },
     "lesson_04_terminal":   { "status": "not-started" },
     "lesson_05_git":        { "status": "not-started" },
-    "lesson_06_agents":     { "status": "not-started" }
+    "lesson_06_agents":     { "status": "not-started" },
+    "lesson_07_creating_skills": { "status": "not-started" }
   }
 }
 ```
@@ -29,7 +30,7 @@
 ## 완료 상태 도출
 
 - `status === "completed"`인 레슨의 수를 세어 `total_completed` 산출
-- `all_complete = (total_completed === 6)`
+- `all_complete = (total_completed === 7)`
 - 이 값들은 JSON에서 읽지 말 것 — 저장되지 않음
 
 ## 진행 상황 업데이트
