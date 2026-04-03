@@ -65,7 +65,7 @@ claude
 
 ```bash
 # 워크숍 플러그인 추가
-claude plugin marketplace add https://github.com/<owner>/claude-code-workshop
+claude plugin marketplace add https://github.com/sunwoong-upstage/claude-code-workshop
 
 # 플러그인 설치
 claude plugin install claude-code-workshop
@@ -81,7 +81,7 @@ claude plugin install claude-code-workshop
 
 ```bash
 # 워크숍 파일 다운로드
-git clone https://github.com/<owner>/claude-code-workshop.git
+git clone https://github.com/sunwoong-upstage/claude-code-workshop.git
 
 # 워크숍 폴더로 이동
 cd claude-code-workshop
@@ -95,6 +95,17 @@ claude --plugin-dir .
 ```
 /claude-code-workshop:start
 ```
+
+> **중요**: 반드시 `claude-code-workshop` 폴더 안에서 `claude --plugin-dir .`을 실행해야 합니다.
+> 다른 폴더에서 실행하면 워크숍 스킬이 로드되지 않습니다.
+
+### 권한 요청이 나타나면?
+
+워크숍을 진행하다 보면 Claude가 "이 작업을 실행해도 될까요?" 같은 **권한 확인 팝업**을 보여줄 수 있습니다.
+이것은 정상입니다! Claude Code는 파일을 만들거나 수정할 때 항상 먼저 허락을 구합니다.
+
+- **"Yes"가 선택된 상태에서 Enter**를 누르면 허용됩니다
+- 걱정되는 작업이 있다면 "No"를 선택해서 거부할 수도 있습니다
 
 ---
 
