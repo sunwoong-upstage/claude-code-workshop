@@ -83,7 +83,7 @@ Claude Code 대화형 워크숍에 오신 것을 환영합니다!
 
 ### Step 5: Show Lesson Menu
 
-레슨 메뉴를 표시하세요. 각 레슨의 status가 "completed"이면 `[DONE]`을, 아니면 `[    ]`을 표시:
+레슨 메뉴를 표시하세요. **반드시 7개 레슨을 모두 빠짐없이 표시해야 합니다.** 각 레슨의 status가 "completed"이면 `[DONE]`을, 아니면 `[    ]`을 표시. 아래 형식을 정확히 따르세요:
 
 ```
 진행 상황: {total_completed}/7 레슨 완료
