@@ -44,13 +44,13 @@ export interface WorkshopProgress {
    * All 7 lesson keys must always be present (initialized to "not-started").
    */
   lessons: {
-    lesson_01_navigation: LessonProgress;
-    lesson_02_editing: LessonProgress;
-    lesson_03_multi_file: LessonProgress;
-    lesson_04_terminal: LessonProgress;
-    lesson_05_git: LessonProgress;
-    lesson_06_agents: LessonProgress;
-    lesson_07_creating_skills: LessonProgress;
+    "lesson-1-prompting": LessonProgress;
+    "lesson-2-file-editing": LessonProgress;
+    "lesson-3-commands": LessonProgress;
+    "lesson-4-slash-commands": LessonProgress;
+    "lesson-5-claude-md": LessonProgress;
+    "lesson-6-skills": LessonProgress;
+    "lesson-7-creating-skills": LessonProgress;
   };
   //
   // NOTE: `total_completed` and `all_complete` are DERIVED on read, NOT stored.
@@ -73,12 +73,12 @@ export const DEFAULT_PROGRESS: WorkshopProgress = {
   started_at: "<ISO timestamp at creation>",
   last_active: "<ISO timestamp at creation>",
   lessons: {
-    lesson_01_navigation: { status: "not-started" },
-    lesson_02_editing: { status: "not-started" },
-    lesson_03_multi_file: { status: "not-started" },
-    lesson_04_terminal: { status: "not-started" },
-    lesson_05_git: { status: "not-started" },
-    lesson_06_agents: { status: "not-started" },
-    lesson_07_creating_skills: { status: "not-started" },
+    "lesson-1-prompting": { status: "not-started" },
+    "lesson-2-file-editing": { status: "not-started" },
+    "lesson-3-commands": { status: "not-started" },
+    "lesson-4-slash-commands": { status: "not-started" },
+    "lesson-5-claude-md": { status: "not-started" },
+    "lesson-6-skills": { status: "not-started" },
+    "lesson-7-creating-skills": { status: "not-started" },
   },
 };

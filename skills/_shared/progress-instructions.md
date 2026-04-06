@@ -16,13 +16,13 @@
   "started_at": "<ISO timestamp>",
   "last_active": "<ISO timestamp>",
   "lessons": {
-    "lesson_01_navigation": { "status": "not-started" },
-    "lesson_02_editing":    { "status": "not-started" },
-    "lesson_03_multi_file": { "status": "not-started" },
-    "lesson_04_terminal":   { "status": "not-started" },
-    "lesson_05_git":        { "status": "not-started" },
-    "lesson_06_agents":     { "status": "not-started" },
-    "lesson_07_creating_skills": { "status": "not-started" }
+    "lesson-1-prompting":       { "status": "not-started" },
+    "lesson-2-file-editing":    { "status": "not-started" },
+    "lesson-3-commands":        { "status": "not-started" },
+    "lesson-4-slash-commands":  { "status": "not-started" },
+    "lesson-5-claude-md":       { "status": "not-started" },
+    "lesson-6-skills":          { "status": "not-started" },
+    "lesson-7-creating-skills": { "status": "not-started" }
   }
 }
 ```
