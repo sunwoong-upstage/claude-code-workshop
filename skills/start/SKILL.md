@@ -99,25 +99,44 @@ Claude Code 대화형 워크숍에 오신 것을 환영합니다!
 
 ### Step 6: Ask the Student to Choose
 
-AskUserQuestion 도구를 사용하여 다음 질문을 하세요:
+AskUserQuestion 도구를 사용하여 두 개의 질문으로 나누어 물어보세요.
 
-> "시작하거나 계속할 레슨을 선택하세요. 번호(1-7)를 입력하거나 배우고 싶은 내용을 설명해 주세요:"
+첫 번째 질문:
 
-다음 옵션을 제공하세요: `["1", "2", "3", "4", "5", "6", "7", "특정 주제를 배우고 싶어요..."]`
+> "어떤 레슨 그룹을 시작하시겠습니까?"
+
+다음 옵션을 제공하세요: `["기초 (레슨 1-3)", "심화 (레슨 4-5)", "실전 (레슨 6-7)", "특정 주제를 배우고 싶어요..."]`
+
+사용자가 그룹을 선택하면, 두 번째 질문으로 해당 그룹의 구체적인 레슨을 물어보세요:
+
+**"기초 (레슨 1-3)"을 선택한 경우:**
+> "어떤 레슨을 시작하시겠습니까?"
+> 옵션: `["1. Claude와 대화하기", "2. 파일 편집", "3. 명령어 실행"]`
+
+**"심화 (레슨 4-5)"를 선택한 경우:**
+> "어떤 레슨을 시작하시겠습니까?"
+> 옵션: `["4. 슬래시 명령어 & 단축키", "5. CLAUDE.md & 프로젝트 컨텍스트"]`
+
+**"실전 (레슨 6-7)"을 선택한 경우:**
+> "어떤 레슨을 시작하시겠습니까?"
+> 옵션: `["6. 플러그인 찾기 & 사용하기", "7. 나만의 스킬 만들기"]`
+
+**"특정 주제를 배우고 싶어요..."를 선택한 경우:**
+> Step 8로 이동하여 자유 형식 입력을 처리하세요.
 
 ### Step 7: Route Based on Selection
 
-사용자의 선택을 올바른 레슨 스킬에 매핑하세요:
+사용자의 선택을 올바른 레슨 스킬에 매핑하세요. 선택에 레슨 번호가 포함되어 있으면 해당 스킬을 호출합니다:
 
-| 선택 | 호출할 스킬 |
+| 선택에 포함된 내용 | 호출할 스킬 |
 |--------|----------------|
-| "1" | `Skill("claude-code-workshop:lesson-1-prompting")` |
-| "2" | `Skill("claude-code-workshop:lesson-2-file-editing")` |
-| "3" | `Skill("claude-code-workshop:lesson-3-commands")` |
-| "4" | `Skill("claude-code-workshop:lesson-4-slash-commands")` |
-| "5" | `Skill("claude-code-workshop:lesson-5-claude-md")` |
-| "6" | `Skill("claude-code-workshop:lesson-6-skills")` |
-| "7" | `Skill("claude-code-workshop:lesson-7-creating-skills")` |
+| "1" 또는 "Claude와 대화" | `Skill("claude-code-workshop:lesson-1-prompting")` |
+| "2" 또는 "파일 편집" | `Skill("claude-code-workshop:lesson-2-file-editing")` |
+| "3" 또는 "명령어 실행" | `Skill("claude-code-workshop:lesson-3-commands")` |
+| "4" 또는 "슬래시 명령어" | `Skill("claude-code-workshop:lesson-4-slash-commands")` |
+| "5" 또는 "CLAUDE.md" | `Skill("claude-code-workshop:lesson-5-claude-md")` |
+| "6" 또는 "플러그인" | `Skill("claude-code-workshop:lesson-6-skills")` |
+| "7" 또는 "스킬 만들기" | `Skill("claude-code-workshop:lesson-7-creating-skills")` |
 
 ### Step 8: Handle Freeform Input
 
