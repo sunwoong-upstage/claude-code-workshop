@@ -61,17 +61,17 @@ claude
 
 ### 방법 A: 플러그인으로 설치 (추천)
 
-터미널에서 아래 명령어를 순서대로 실행하세요:
+Claude Code를 실행한 후, 아래 명령어를 순서대로 입력하세요:
 
-```bash
-# 워크숍 플러그인 추가
-claude plugin marketplace add https://github.com/sunwoong-upstage/claude-code-workshop
+```
+# 1. 워크숍 마켓플레이스 등록
+/plugin marketplace add sunwoong-upstage/claude-code-workshop
 
-# 플러그인 설치
-claude plugin install claude-code-workshop
+# 2. 플러그인 설치
+/plugin install claude-code-workshop@claude-code-workshop
 ```
 
-설치가 완료되면 Claude Code를 실행하고 아래를 입력하세요:
+설치가 완료되면 아래를 입력하세요:
 
 ```
 /claude-code-workshop:start

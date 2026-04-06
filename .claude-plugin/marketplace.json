@@ -1,0 +1,17 @@
+{
+  "name": "claude-code-workshop",
+  "owner": {
+    "name": "sunwoong-upstage"
+  },
+  "metadata": {
+    "description": "Claude Code를 배우는 대화형 워크숍 플러그인"
+  },
+  "plugins": [
+    {
+      "name": "claude-code-workshop",
+      "source": "./",
+      "description": "실습 레슨을 통해 Claude Code를 가르치는 대화형 워크숍",
+      "version": "1.0.0"
+    }
+  ]
+}
